@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stresstest
+spec:
+  selector:
+    matchLabels:
+      run: stresstest
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: stresstest
+        security: S1
+    spec:
+      containers:
+      - name: stresstest
+        image: containerstack/cpustress
+        args:
+        - --cpu={{ .Values.cpuUnits }}
+        - --timeout=4800s
+        ports:
+        - containerPort: 80
+        resources:
+          limits:
+            cpu: 200m
+          requests:
+            cpu: 200m

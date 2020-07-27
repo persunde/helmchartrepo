@@ -1,0 +1,22 @@
+apiVersion: v2 #v2 is for Helm 3 and up
+name: tdaq-helm-chart
+version: 1.0.0
+appVersion: 1.0.0
+description: Helm chart for deploying everything needed to run the Atlas K8S TDAQ
+keywords:
+- tdaq-helm-chart
+home: https://gitlab.cern.ch/pesunde/tdaq-helm-chart
+sources:
+- https://gitlab.cern.ch/pesunde/tdaq-helm-chart
+maintainers:
+- name: pesunde
+  email: per.sunde@cern.ch
+
+# Example of dependency, might not want to use this one
+#dependencies:
+#  - name: metrics-server
+#    version: 4.2.1
+#    repository: https://charts.bitnami.com/bitnami
+#  - name: prometheus-operator
+#    version: 8.7.0 # unsure about version number
+#    repository: https://kubernetes-charts.storage.googleapis.com/ # under stable
